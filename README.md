@@ -11,4 +11,7 @@ A module is a collection of Go packages stored in a file tree with a go.mod file
 
 #### *Adding a dependency*
 The primary motivation for Go modules was to improve the experience of using (that is, adding a dependency on) code written by other developers.
-``
+we can add the dependecy with `import` statment. 
+eg:`import "rsc.io/quote"` 
+
+` go list -m all` : lists the current module and all its dependencies
