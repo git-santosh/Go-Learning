@@ -19,3 +19,16 @@ eg:`import "rsc.io/quote"`
 #### *Upgrading dependencies*
 `go list -m -versions rsc.io/sampler` : show versions
 `go get rsc.io/sampler@v1.3.1` : install specific version 
+
+### Data Type Forating 
+
+The default format for %v is:
+```sh
+bool:                    %t
+int, int8 etc.:          %d
+uint, uint8 etc.:        %d, %#x if printed with %#v
+float32, complex64, etc: %g
+string:                  %s
+chan:                    %p
+pointer:                 %p
+```
