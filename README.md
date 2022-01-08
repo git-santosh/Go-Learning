@@ -15,3 +15,7 @@ we can add the dependecy with `import` statment.
 eg:`import "rsc.io/quote"` 
 
 ` go list -m all` : lists the current module and all its dependencies
+
+#### *Upgrading dependencies*
+`go list -m -versions rsc.io/sampler` : show versions
+`go get rsc.io/sampler@v1.3.1` : install specific version 
