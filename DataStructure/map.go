@@ -50,4 +50,12 @@ func main() {
 
 	//map with make
 	m := make(map[string]int)
+	m["key1"] = 101
+	m["key2"] = 102
+	m["key3"] = 103
+	fmt.Println(m)
+	v, ok := m["key2"]
+	fmt.Println("The value:", v, "Present?", ok)
+	i, j := m["key4"]
+	fmt.Println("The value:", i, "Present?", j)
 }
