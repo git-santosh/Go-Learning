@@ -17,4 +17,6 @@ func main() {
 	fmt.Printf("%T %v \n", e, e)
 	// fmt.Printf("%v %v %v %q \n", i, f, b, s)
 	//fmt.Printf("%T %T %T %T %T\n", a, b, c, d, e)
+	s := fmt.Sprintf("%v %q %v %v %t \n", a, b, c, d, e)
+	fmt.Println(s)
 }
