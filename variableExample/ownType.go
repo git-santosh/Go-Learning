@@ -4,13 +4,15 @@ import "fmt"
 
 var a int
 
-type vadapav int
+type Vadapav int
 
-var b vadapav
+var b Vadapav
 
 func main() {
 	a = 50
-	b = 53
+	var b = Vadapav(53)
+
+	// b = 53
 	fmt.Println(a)
 	fmt.Printf("%T \n", a)
 	fmt.Println(b)
