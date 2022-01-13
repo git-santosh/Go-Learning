@@ -42,6 +42,20 @@ func DemoCat(cat Cat) {
 	cat.Sit()
 }
 
+// This interface represents any type
+// that has both Walk and Sit methods.
+type FourLegged interface {
+	Walk()
+	Sit()
+}
+
+// We can replace DemoDog and DemoCat
+// with this single function.
+func Demo(animal FourLegged) {
+	animal.Walk()
+	animal.Sit()
+}
+
 func main() {
 	dog := Dog{"Fido", "Terrier"}
 	cat := Cat{"Fluffy", "Siamese"}
