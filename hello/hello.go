@@ -1,6 +1,14 @@
 package main
-import "fmt"
 
-func main(){
-	fmt.Println("Hello World from Go world");
+import (
+	"fmt"
+	"io"
+	"os"
+)
+
+func main() {
+	str := "Hello World from Go world"
+	fmt.Println(str)
+	fmt.Fprintln(os.Stdout, str)
+	io.WriteString(os.Stdout, str)
 }
