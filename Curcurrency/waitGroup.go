@@ -15,6 +15,7 @@ func main() {
 	wg.Add(1)
 	go foo()
 	bar()
+
 	fmt.Println("Goroutines:\t", runtime.NumGoroutine())
 	fmt.Println("Go C calls:\t", runtime.NumCgoCall())
 	wg.Wait()
