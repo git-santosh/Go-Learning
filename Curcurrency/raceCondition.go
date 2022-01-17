@@ -10,8 +10,10 @@ func main() {
 
 	counter := 0
 	const gs = 100
-	var ws sync.WaitGroup
-	var mx sync.Mutex
+	var (
+		ws sync.WaitGroup
+		mx sync.Mutex // mutex is used to define a critical section of code.
+	)
 	ws.Add(gs)
 	fmt.Println("CPU's", runtime.NumCPU())
 	fmt.Println("GORUUTINES", runtime.NumGoroutine())
