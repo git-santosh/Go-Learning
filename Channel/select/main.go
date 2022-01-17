@@ -5,7 +5,7 @@ import "fmt"
 func main() {
 	even := make(chan int)
 	odd := make(chan int)
-	quit := make(chan int)
+	quit := make(chan bool)
 
 	// send
 	go send(even, odd, quit)
@@ -15,7 +15,7 @@ func main() {
 }
 
 // send
-func send(e, o, q chan<- int) {
+func send(e, o chan<- int, q chan<- bool) {
 	for i := 0; i < 100; i++ {
 		if i%2 == 0 {
 			e <- i
@@ -23,19 +23,19 @@ func send(e, o, q chan<- int) {
 			o <- i
 		}
 	}
-	q <- 0
+	close(q)
 }
 
 //receive
-func receive(e, o, q <-chan int) {
+func receive(e, o <-chan int, q <-chan bool) {
 	for {
 		select {
 		case v := <-e:
 			fmt.Println("from the even channel", v)
 		case v := <-o:
 			fmt.Println("from the odd channel", v)
-		case v := <-q:
-			fmt.Println("from the quit channel", v)
+		case v, ok := <-q:
+			fmt.Println("from comma ok idiom", v, ok)
 			return
 		}
 	}
