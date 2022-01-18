@@ -8,10 +8,11 @@ import (
 )
 
 func main() {
-
-	var counter int64
 	const gs = 100
-	var ws sync.WaitGroup
+	var (
+		counter int64 // counter is a variable incremented by all goroutines.
+		ws      sync.WaitGroup
+	)
 	ws.Add(gs)
 	fmt.Println("CPU's", runtime.NumCPU())
 	fmt.Println("GORUUTINES", runtime.NumGoroutine())
