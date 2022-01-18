@@ -1,18 +1,19 @@
-package main 
+package main
 
 import (
 	"fmt"
-	"os"
 	"io"
+	"os"
 	"strings"
 )
-func main(){
-	f,err := os.Create("names.txt")
-	if err !=nil {
+
+func main() {
+	f, err := os.Create("names.txt")
+	if err != nil {
 		fmt.Println(err)
 		return
 	}
 	defer f.Close()
 	r := strings.NewReader("santsoh suryawanshi")
-	io.Copy(f,r)
+	io.Copy(f, r)
 }
