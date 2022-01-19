@@ -1,16 +1,16 @@
-package main 
+package main
 
 import (
 	"fmt"
-	"os"
 	"io/ioutil"
 	"log"
-	
+	"os"
 )
-func main(){
+
+func main() {
 	defer foo()
-	f,err:=os.Open("names.txt")
-	if err != nil { 
+	f, err := os.Open("names.txt")
+	if err != nil {
 		//fmt.Println(err)
 		//log.Println(err)
 		log.Panicln(err)
@@ -18,14 +18,14 @@ func main(){
 		return
 	}
 	defer f.Close()
-	bs,err := ioutil.ReadAll(f);
-	if err != nil { 
+	bs, err := ioutil.ReadAll(f)
+	if err != nil {
 		fmt.Println(err)
 		return
 	}
 	fmt.Println(string(bs))
 }
 
-func foo(){ 
+func foo() {
 	fmt.Println("when os.Exit() is called , the deffered function doesnt run")
 }
