@@ -1,0 +1,15 @@
+<?xml version="1.0" 
+encoding="UTF-8"?>
+<person>
+<name>Santosh Suryawanshi</name>
+<addresses>
+<address type="secondary">
+<street>321 MG Road</street>
+<city>Pune</city>
+</address>
+<address type="primary">
+<street>St Paul Street </street>
+<city>Mumbai</city>
+</address>
+</addresses>
+</person>
